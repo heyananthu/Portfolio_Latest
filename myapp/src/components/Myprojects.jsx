@@ -2,12 +2,12 @@ import React, { useEffect, useRef } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import Netflixclone from './assets/netflixclone.jpg'
 import Olxclone from './assets/olx clone.jpg'
-import Film from './assets/film copy.jpg'
+import chatApp from './assets/chatapp.jpg'
 function Myprojects() {
   const controls1 = useAnimation();
   const controls2 = useAnimation();
   const controls3 = useAnimation();
-  
+
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
@@ -62,7 +62,7 @@ function Myprojects() {
       <h1 className="text-white font-black text-5xl text-center">
         <span className="text-cyan-500">My</span> Projects
       </h1>
-      <div className="sm:flex sm:ml-24 sm:mt-12 relative z-20 ml-6">
+      <div className="sm:flex sm:ml-24 sm:mt-12 relative z-20 ml-4">
         <div ref={ref1} className="w-full max-w-md">
           <motion.div
             initial={{ opacity: 0, y: 100 }}
@@ -71,7 +71,7 @@ function Myprojects() {
             className="max-w-sm mt-12  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
           >
             <a href="#">
-              <img className="rounded-t-lg"  src={Olxclone} alt="Netflix Clone" />
+              <img className="rounded-t-lg" src={Olxclone} alt="Netflix Clone" />
             </a>
             <div className="p-5">
               <a href="#">
@@ -111,24 +111,24 @@ function Myprojects() {
             </div>
           </motion.div>
         </div>
-        <div ref={ref3} className="w-full max-w-md mt-12">
+        <div ref={ref3} className="w-full max-w-md mt-12 ">
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             animate={controls3}
             transition={{ type: "spring", stiffness: 100, damping: 14, delay: 0.5 }}
-            className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 sm:h-[22.5rem]"
           >
             <a href="#">
-              <img className="rounded-t-lg" src={Film} alt="Netflix Clone" />
+              <img className="rounded-t-lg sm:h-[11.5rem] sm:w-full" src={chatApp} alt="Netflix Clone" />
             </a>
             <div className="p-5">
               <a href="#">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">CineStream</h5>
               </a>
-              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Netflix clone built with React, Bootstrap, and TMDb APIs.</p>
-              <a href="https://669cabd2017118254bb7cd24--thriving-truffle-729d42.netlify.app/" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-red-500 dark:bg-blue-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Chat Application built in MERN Stack.</p>
+              <a href="https://chatapp-2025-1-frondend.onrender.com/" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-red-500 dark:bg-blue-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
                 visit
-                <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                 </svg>
               </a>
