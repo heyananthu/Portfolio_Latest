@@ -12,9 +12,9 @@ const Nav = () => {
         setNav(!nav)
     }
     return (
-        <div className="text-white flex justify-between items-center h-20 max-w-[1240px] mx-auto px-4">
+        <div className="text-white flex justify-between items-center h-20 max-w-[1240px] mx-auto px-4 ">
 
-            <div className="flex">
+            <div className="flex sm:absolute sm:left-[30rem]">
                 <motion.div
                     initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -31,17 +31,17 @@ const Nav = () => {
 
                 <div>
                     <h1 className="w-full font-black text-5xl text-cyan-400  hidden sm:block sm:mt-12">
-                        A<span className="text-white">nanthu</span>
+                        A<span className="text-white">nanthu </span>
                     </h1>
                 </div>
             </div>
-            <ul className="hidden md:flex sm:mt-4">
+            {/* <ul className="hidden md:flex sm:mt-4">
                 <li className="p-4  text-2xl text-cyan-500  font-black cursor-pointer ">Home</li>
                 <li className="p-4  text-2xl text-cyan-500  font-black cursor-pointer ">About</li>
                 <li className="p-4  text-2xl text-cyan-500  font-black cursor-pointer ">Skills</li>
                 <li className="p-4  text-2xl text-cyan-500  font-black cursor-pointer ">Education</li>
                 <li className="p-4  text-2xl text-cyan-500  font-black cursor-pointer ">Contact</li>
-            </ul>
+            </ul> */}
             {/* <div onClick={handleNav} className="block md:hidden">
                 {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
             </div>

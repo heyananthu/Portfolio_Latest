@@ -3,7 +3,7 @@ import { motion, useAnimation } from 'framer-motion'
 import Netflixclone from './assets/netflixclone.jpg'
 import Olxclone from './assets/olx clone.jpg'
 import chatApp from './assets/chatapp.jpg'
-function Myprojects() {
+const Myprojects = React.forwardRef((props, ref) => {
   const controls1 = useAnimation();
   const controls2 = useAnimation();
   const controls3 = useAnimation();
@@ -58,7 +58,7 @@ function Myprojects() {
   }, [controls1, controls2, controls3]);
 
   return (
-    <div className="mt-20">
+    <div className="mt-20" ref={ref} id="projects">
       <h1 className="text-white font-black text-5xl text-center">
         <span className="text-cyan-500">My</span> Projects
       </h1>
@@ -138,6 +138,6 @@ function Myprojects() {
       </div>
     </div>
   )
-}
+})
 
 export default Myprojects
