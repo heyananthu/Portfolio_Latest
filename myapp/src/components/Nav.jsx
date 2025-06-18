@@ -20,7 +20,7 @@ const Nav = () => {
 
     return (
         <nav className="bg-black text-white w-full shadow-md py-6">
-            <div className="flex justify-between items-center h-20 max-w-screen-xl mx-auto px-4">
+            <div className="flex justify-between items-center h-12 max-w-screen-xl mx-auto px-4">
                 {/* Logo and Animation */}
                 <div className="flex items-center">
                     <motion.div
@@ -44,7 +44,7 @@ const Nav = () => {
                 </div>
 
                 {/* Desktop Menu */}
-                <ul className="hidden md:flex gap-4">
+                <ul className="hidden lg:flex gap-4">
                     {navLinks.map((link) => (
                         <li key={link.name}>
                             <a
@@ -60,7 +60,7 @@ const Nav = () => {
                 {/* Hamburger Icon */}
                 <div
                     onClick={() => setNav(!nav)}
-                    className="md:hidden cursor-pointer z-50"
+                    className="lg:hidden cursor-pointer z-50"
                 >
                     {nav ? <AiOutlineClose size={28} /> : <AiOutlineMenu size={28} />}
                 </div>
@@ -77,16 +77,16 @@ const Nav = () => {
 
             {/* Side Drawer */}
             <div
-                className={`fixed top-0 left-0 h-full w-3/4 max-w-xs bg-black border-r border-slate-500 z-50 transform ${nav ? "translate-x-0" : "-translate-x-full"
-                    } transition-transform duration-300 ease-in-out`}
+                className={`fixed top-0 left-0 h-screen w-3/4 max-w-xs bg-black border-r border-slate-500 z-50 transform ${nav ? "translate-x-0" : "-translate-x-full"
+                    } transition-transform duration-300 ease-in-out space-y-12`}
             >
                 <h1 className="font-bold text-3xl text-green-500 m-6 mb-2">Quick Links</h1>
-                <ul className="uppercase">
+                <ul className="uppercase space-y-4 grid place-items-center">
                     {navLinks.map((link) => (
                         <li key={link.name}>
                             <a
                                 href={`#${link.to}`}
-                                className="p-4 border-b border-b-white text-sky-400 font-bold cursor-pointer hover:bg-slate-800"
+                                className="p-4  text-sky-400 font-bold cursor-pointer hover:bg-slate-800"
                                 onClick={handleLinkClick}
                             >
                                 {link.name}

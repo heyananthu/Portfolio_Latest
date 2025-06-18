@@ -10,7 +10,7 @@ function Section1() {
     const text = "I am very passionate about improving my coding skills & developing applications & websites. I build WebApps and Websites using MERN Stack. Working for myself to improve my skills. Love to build Full-Stack clones.........".split(" ");
 
     return (
-        <section className="relative grid grid-cols-1 lg:grid-cols-2 max-w-screen-xl mx-auto px-4 py-6 gap-8">
+        <section className="relative grid grid-cols-1 lg:grid-cols-2 max-w-screen-xl mx-auto px-4 py-6 gap-8 lg:mt-12">
             {/* Left Side: Design and Main Content */}
             <div className="w-full  flex flex-col justify-center">
                 {/* Optional: Design Component */}
