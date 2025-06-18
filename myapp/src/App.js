@@ -8,19 +8,21 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Myprojects from './components/Myprojects';
+import Mainpage from './components/Mainpage';
 // import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 function App() {
   return (
     <div>
       <div className='bg-black h-full'>
-        <Nav />
+        {/* <Nav />
         <Section1 />
         <About/>
         <EducationSection/>
         <Skills/>
         <Myprojects/>
         <Contact/>
-        <Footer/>
+        <Footer/> */}
+        <Mainpage />
       </div>
     </div>
 
