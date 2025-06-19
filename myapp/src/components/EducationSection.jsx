@@ -70,7 +70,7 @@ function EducationSection() {
                                 Master's of Computer Application
                             </h2>
                             <h3 className='text-gray-700 dark:text-white'>Sree Narayana Institute of Technology</h3>
-                            <p className="text-cyan-500 font-black mt-4">2022-2024 | Pursuing</p>
+                            <p className="text-cyan-500 font-black mt-4">2022-2024 | Completed</p>
                         </div>
                     </div>
                 </motion.div>
