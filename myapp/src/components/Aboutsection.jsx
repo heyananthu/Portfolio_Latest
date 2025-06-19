@@ -75,7 +75,7 @@ function Aboutsection() {
                         <motion.div whileTap={{ scale: 0.93 }}>
                             <a
                                 className="text-white bg-cyan-500 rounded-xl px-6 py-3 flex items-center font-semibold transition hover:bg-cyan-600"
-                                href="https://drive.google.com/file/d/1DNAyRaRETLJunTgO_DgmMmm7hDkpgDuw/view?usp=sharing"
+                                href="https://drive.google.com/file/d/1FB3xSOptrKpSr2LhPQgp-gO3P_COvFaN/view?usp=sharing"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
