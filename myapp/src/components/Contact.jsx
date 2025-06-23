@@ -3,10 +3,11 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { useState } from 'react';
 import MovingText from 'react-moving-text'
+import toast, { Toaster } from 'react-hot-toast';
 
 function Contact() {
     const form = useRef();
-    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -18,11 +19,14 @@ function Contact() {
             .then(
                 () => {
                     console.log('SUCCESS!');
-                    setShowSuccessMessage(true);
-                    setTimeout(() => {
-                        setShowSuccessMessage(false);
-                    }, 10000); // hide the message after 3 seconds
+                    toast.success('Message Sended..')
+                    setLoading(false)
+                    // setShowSuccessMessage(true);
+                    // setTimeout(() => {
+                    //     setShowSuccessMessage(false);
+                    // }, 10000); // hide the message after 3 seconds
                     // window.location.replace(window.location.href); 
+                    window.location.replace(window.location.href)
                 },
                 (error) => {
                     console.log('FAILED...', error.text);
@@ -33,6 +37,7 @@ function Contact() {
 
     return (
         <div>
+            <Toaster />
             <section class="mt-20">
                 <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
                     <h2 class="mb-4 text-5xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Get in <span className='text-cyan-500'>Touch</span></h2>
@@ -50,17 +55,25 @@ function Contact() {
                             <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
                             <textarea name="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
                         </div>
-                        <button type="submit" value="send" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-cyan-500 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                            onClick={() => setShowSuccessMessage(false)}
-                        >Send message</button>
+                        <button type="submit" value="send" class="py-3 px-12 text-sm font-medium text-center text-white rounded-lg bg-cyan-500 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                            onClick={() => setLoading(true)}
+                        >
+                            {
+                                loading ? (
+                                    <div className='flex gap-3'>
+                                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                                        Sending...
+                                    </div>
+                                ):("Send message")
+                            }
+                            </button>
                     </form>
                 </div>
             </section>
 
             {/* Your form and other components */}
 
-            {showSuccessMessage && (
-
+            {/* {showSuccessMessage && (
                 <div
                     className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 bg-gray-500"
                     style={{ zIndex: 1000 }} >
@@ -87,7 +100,7 @@ function Contact() {
                     </MovingText>
                 </div>
             )
-            }
+            } */}
 
         </div >
     )
