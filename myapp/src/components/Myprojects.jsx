@@ -3,15 +3,22 @@ import { motion, useAnimation } from 'framer-motion'
 import Netflixclone from './assets/netflixclone.jpg'
 import Olxclone from './assets/olx clone.jpg'
 import chatApp from './assets/chatapp.jpg'
+import greets from './assets/project/greets-project.png'
+import netspoc from './assets/project/netspoc.png'
 
 const Myprojects = React.forwardRef((props, ref) => {
   const controls1 = useAnimation();
   const controls2 = useAnimation();
   const controls3 = useAnimation();
+  const controls4 = useAnimation();
+  const controls5 = useAnimation();
 
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
+  const ref4 = useRef(null);
+  const ref5 = useRef(null);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,15 +53,39 @@ const Myprojects = React.forwardRef((props, ref) => {
       },
       { threshold: 0.1 }
     );
+    const observer4 = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls4.start({ opacity: 1, y: 0 });
+        } else {
+          controls4.start({ opacity: 0, y: 100 });
+        }
+      },
+      { threshold: 0.1 }
+    );
+    const observer5 = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls5.start({ opacity: 1, y: 0 });
+        } else {
+          controls5.start({ opacity: 0, y: 100 });
+        }
+      },
+      { threshold: 0.1 }
+    );
 
     if (ref1.current) observer.observe(ref1.current);
     if (ref2.current) observer2.observe(ref2.current);
     if (ref3.current) observer3.observe(ref3.current);
+    if (ref4.current) observer4.observe(ref4.current);
+    if (ref5.current) observer5.observe(ref5.current);
 
     return () => {
       if (ref1.current) observer.unobserve(ref1.current);
       if (ref2.current) observer2.unobserve(ref2.current);
       if (ref3.current) observer3.unobserve(ref3.current);
+      if (ref4.current) observer4.unobserve(ref4.current);
+      if (ref5.current) observer5.unobserve(ref5.current);
     };
   }, [controls1, controls2, controls3]);
 
@@ -83,8 +114,24 @@ const Myprojects = React.forwardRef((props, ref) => {
       title: "Chat App",
       desc: "Chat Application built in MERN Stack.",
       link: "https://chatapp-2025-1-frondend.onrender.com/"
+    },
+    {
+      ref: ref4,
+      controls: controls4,
+      img: greets,
+      title: "Greets",
+      desc: "Frontend Project built in ReactJS , Tailwind CSS.",
+      link: "https://www.greets.co.in/"
+    },
+    {
+      ref: ref5,
+      controls: controls5,
+      img: netspoc,
+      title: "Netspoc",
+      desc: "Frontend Project built in ReactJS , Tailwind CSS.",
+      link: "https://www.netspoc.com/"
     }
-  ];
+  ].reverse();
 
   return (
     <div className="mt-20 px-4 max-w-screen-xl mx-auto" ref={ref} id="projects">
