@@ -44,7 +44,7 @@ function EducationSection() {
                     className="flex flex-col gap-6 w-full "
                 >
                     {/* Card 1 */}
-                    <div className="flex flex-col md:flex-row items-center bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <div className="flex flex-col md:flex-row items-center bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg overflow-hidden z-10">
                         <img
                             className="object-cover w-full md:w-48 h-48 md:h-48"
                             src={Snit}
@@ -59,7 +59,7 @@ function EducationSection() {
                         </div>
                     </div>
                     {/* Card 2 */}
-                    <div className="flex flex-col md:flex-row items-center bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <div className="flex flex-col md:flex-row items-center bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg overflow-hidden z-10">
                         <img
                             className="object-cover w-full md:w-48 h-48 md:h-48"
                             src={Snct}

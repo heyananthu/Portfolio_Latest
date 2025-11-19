@@ -61,7 +61,7 @@ function Section1() {
                         damping: 20,
                         delay: 0.8,
                     }}
-                    className="pointer-events-none text-white font-bold shadow-sm shadow-white bg-sky-500 rounded-xl w-36 h-12 mt-8 sm:mt-12"
+                    className="z-10 pointer-events-none text-white font-bold shadow-sm shadow-white bg-sky-500 rounded-xl w-36 h-12 mt-8 sm:mt-12"
                 >
                     About me 👇
                 </motion.button>
