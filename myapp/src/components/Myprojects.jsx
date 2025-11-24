@@ -8,6 +8,7 @@ import netspoc from './assets/project/netspoc.png'
 import vinya from './assets/project/vinya.png'
 import alaigram from './assets/project/alaigram-project.png'
 import alaigramfrondend from './assets/project/alaigram-frondend.png'
+import christmas from './assets/project/christmasfriend.webp'
 import voicene from './assets/project/voicene-project.png'
 const Myprojects = React.forwardRef((props, ref) => {
   const controls1 = useAnimation();
@@ -19,6 +20,7 @@ const Myprojects = React.forwardRef((props, ref) => {
   const controls7 = useAnimation();
   const controls8 = useAnimation();
   const controls9 = useAnimation();
+  const controls10 = useAnimation();
 
   const ref1 = useRef(null);
   const ref2 = useRef(null);
@@ -29,6 +31,7 @@ const Myprojects = React.forwardRef((props, ref) => {
   const ref7 = useRef(null);
   const ref8 = useRef(null);
   const ref9 = useRef(null);
+  const ref10 = useRef(null);
 
 
   useEffect(() => {
@@ -125,6 +128,17 @@ const Myprojects = React.forwardRef((props, ref) => {
       { threshold: 0.1 }
     );
 
+    const observer10 = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls10.start({ opacity: 1, y: 0 });
+        } else {
+          controls10.start({ opacity: 0, y: 100 });
+        }
+      },
+      { threshold: 0.1 }
+    );
+
     if (ref1.current) observer.observe(ref1.current);
     if (ref2.current) observer2.observe(ref2.current);
     if (ref3.current) observer3.observe(ref3.current);
@@ -134,6 +148,7 @@ const Myprojects = React.forwardRef((props, ref) => {
     if (ref7.current) observer7.observe(ref7.current);
     if (ref8.current) observer8.observe(ref8.current);
     if (ref9.current) observer9.observe(ref9.current);
+    if (ref10.current) observer10.observe(ref10.current);
     return () => {
       if (ref1.current) observer.unobserve(ref1.current);
       if (ref2.current) observer2.unobserve(ref2.current);
@@ -144,6 +159,9 @@ const Myprojects = React.forwardRef((props, ref) => {
       if (ref7.current) observer7.unobserve(ref7.current);
       if (ref8.current) observer8.unobserve(ref8.current);
       if (ref9.current) observer9.unobserve(ref9.current);
+      if (ref10.current) observer10.unobserve(ref10.current);
+
+
     };
   }, [controls1, controls2, controls3]);
 
@@ -165,7 +183,7 @@ const Myprojects = React.forwardRef((props, ref) => {
       desc: "Netflix clone built with React, Bootstrap, and TMDb APIs.",
       link: "https://669cabd2017118254bb7cd24--thriving-truffle-729d42.netlify.app/"
     },
-    
+
     {
       ref: ref9,
       controls: controls9,
@@ -182,7 +200,7 @@ const Myprojects = React.forwardRef((props, ref) => {
       desc: "Frontend Project built in ReactJS , Tailwind CSS.",
       link: "https://www.netspoc.com/"
     },
-     {
+    {
       ref: ref6,
       controls: controls6,
       img: vinya,
@@ -198,7 +216,7 @@ const Myprojects = React.forwardRef((props, ref) => {
       desc: "Frontend Project built in ReactJS and Tailwind CSS.",
       link: "https://alaigram.vercel.app/"
     },
-    
+
   ];
 
   const fullstackProjects = [
@@ -210,8 +228,8 @@ const Myprojects = React.forwardRef((props, ref) => {
       desc: "Olx clone built with React, Bootstrap, and Firebase",
       link: "https://66a260392cc9dc3c6152e409--illustrious-bubblegum-e89747.netlify.app/"
     },
-    
-    
+
+
     {
       ref: ref7,
       controls: controls7,
@@ -219,6 +237,14 @@ const Myprojects = React.forwardRef((props, ref) => {
       title: "Alaigram",
       desc: "Ecommerce Project built in Shopify.",
       link: "https://www.alaigram.com/"
+    },
+    {
+      ref: ref10,
+      controls: controls10,
+      img: christmas,
+      title: "Christmas Friend Finder App",
+      desc: "Built a Christmas finder application using MERN, Tailwind, Nodemailer, Bervo",
+      link: "https://christmas-friend-finder-app.onrender.com/"
     },
     {
       ref: ref3,
